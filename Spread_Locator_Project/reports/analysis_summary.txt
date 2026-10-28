@@ -1,0 +1,27 @@
+SPREAD LOCATOR — ANALYSIS SUMMARY
+========================================
+Transactions analyzed: 220
+Amount mean: ₹3365.19; median: ₹3077.72; standard deviation: ₹1985.71
+Amount skewness: 3.730
+
+Distribution fits:
+- Bernoulli estimated success probability: 0.445
+- Binomial approximate n=9, p=0.317 (fixed weekly opportunities not specified)
+- Poisson mean daily transactions λ=7.097
+- Log-normal KS statistic=0.0378, p=0.8999
+- Pareto/power-law-style KS statistic=0.3216, p=9.57e-21
+
+Diagnostics:
+- Shapiro raw amounts p=1.91e-18; log amounts p=0.1061
+- Box-Cox lambda=-0.181
+- Z-score at ₹5000=0.823
+- Normal-approx P(amount > ₹5000)=0.2052
+- Empirical proportion amount > ₹5000=0.1136
+
+Interpretation guidance:
+- Compare fitted distributions using plots and goodness-of-fit diagnostics; a larger KS p-value alone does not prove a model is correct.
+- The Bernoulli model treats each transaction status as success/failure.
+- Daily Poisson counts assume events are independent with a stable average rate; inspect mean and variance before relying on this model.
+- Box-Cox requires positive values and transforms data to reduce skewness/variance instability.
+- Z-score probability uses a Normal approximation, which can be inaccurate for skewed transaction amounts.
+- All findings describe this supplied dataset and do not guarantee future customer behavior.
